@@ -1,0 +1,2362 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>Panfit — Padaria Funcional & Inclusiva | Jaraguá do Sul</title>
+  <meta name="description" content="Catálogo completo Panfit (@panfit7) em Jaraguá do Sul. 100% Sem Glúten e Sem Lactose. Pães artesanais, bolos, cucas com Ghee, congelados e linha Zero Açúcar." />
+
+  <!-- Tipografia Editorial de Padaria Artesanal -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --paper: #F6F2EB;
+      --paper-card: #FCF9F4;
+      --paper-warm: #EFE9DF;
+      --ink: #231F1C;
+      --ink-soft: #5C534B;
+      --ink-muted: #8A7F74;
+      --olive: #2D4A34;
+      --olive-hover: #213826;
+      --olive-tint: #E5ECE6;
+      --terracotta: #B65332;
+      --terracotta-tint: #F7E8E2;
+      --wheat: #C69B52;
+      --line: #E0D7C8;
+      --line-dark: #C8BCA9;
+      --font-serif: 'Fraunces', Georgia, serif;
+      --font-editorial: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: #E7E0D3;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--paper);
+      color: var(--ink);
+      line-height: 1.5;
+      max-width: 580px;
+      margin: 0 auto;
+      min-height: 100vh;
+      border-left: 1px solid var(--line-dark);
+      border-right: 1px solid var(--line-dark);
+      box-shadow: 0 0 50px rgba(35, 31, 28, 0.08);
+      position: relative;
+      padding-bottom: 120px;
+      background-image: radial-gradient(rgba(138, 127, 116, 0.07) 1px, transparent 0);
+      background-size: 18px 18px;
+    }
+
+    button, input, select, textarea {
+      font-family: inherit;
+      color: inherit;
+    }
+
+    /* Faixa Superior */
+    .top-ribbon {
+      background: var(--olive);
+      color: #F6F2EB;
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 9px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .status-indicator {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #7CE395;
+    }
+
+    .status-dot.closed {
+      background: #F4A261;
+    }
+
+    /* Cabeçalho Editorial */
+    .bakery-header {
+      padding: 26px 20px 20px;
+      border-bottom: 1px solid var(--line);
+      background: var(--paper-card);
+    }
+
+    .header-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--ink-muted);
+      padding-bottom: 14px;
+      margin-bottom: 18px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand-lockup {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .brand-seal {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      border: 1.5px solid var(--olive);
+      background: var(--paper);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      text-align: center;
+      padding: 6px;
+    }
+
+    .brand-seal-title {
+      font-family: var(--font-serif);
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--olive);
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+
+    .brand-seal-sub {
+      font-size: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--terracotta);
+      margin-top: 4px;
+      font-weight: 700;
+    }
+
+    .brand-title {
+      font-family: var(--font-serif);
+      font-size: 27px;
+      font-weight: 600;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+    }
+
+    .brand-title em {
+      font-family: var(--font-editorial);
+      font-style: italic;
+      font-weight: 600;
+      color: var(--terracotta);
+      font-size: 30px;
+    }
+
+    .brand-story {
+      margin-top: 8px;
+      font-size: 13.5px;
+      color: var(--ink-soft);
+      line-height: 1.48;
+    }
+
+    /* Selos de Segurança Alimentar */
+    .Zero-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: var(--paper-warm);
+    }
+
+    .zero-cell {
+      padding: 10px 8px;
+      text-align: center;
+      border-right: 1px solid var(--line);
+    }
+
+    .zero-cell:last-child {
+      border-right: none;
+    }
+
+    .zero-cell strong {
+      display: block;
+      font-family: var(--font-serif);
+      font-size: 12.5px;
+      color: var(--olive);
+      font-weight: 600;
+    }
+
+    .zero-cell span {
+      font-size: 10.5px;
+      color: var(--ink-soft);
+    }
+
+    /* Atalhos do Biosite */
+    .quick-links {
+      padding: 16px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .bio-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 13px 15px;
+      background: var(--paper-card);
+      border: 1px solid var(--line-dark);
+      border-radius: 6px;
+      text-decoration: none;
+      color: var(--ink);
+      transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+      cursor: pointer;
+    }
+
+    .bio-row:hover {
+      border-color: var(--olive);
+      background: #FFFDF9;
+    }
+
+    .bio-row:active {
+      transform: scale(0.992);
+    }
+
+    .bio-row.featured {
+      background: var(--olive);
+      border-color: var(--olive);
+      color: #F6F2EB;
+    }
+
+    .bio-row.featured .bio-sub {
+      color: rgba(246, 242, 235, 0.8);
+    }
+
+    .bio-left {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      text-align: left;
+    }
+
+    .bio-kicker {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+      color: var(--terracotta);
+    }
+
+    .bio-row.featured .bio-kicker {
+      color: #E8C587;
+    }
+
+    .bio-main {
+      font-family: var(--font-serif);
+      font-size: 15.5px;
+      font-weight: 600;
+    }
+
+    .bio-sub {
+      font-size: 12px;
+      color: var(--ink-soft);
+    }
+
+    .bio-arrow {
+      font-size: 17px;
+      font-family: var(--font-serif);
+      padding-left: 10px;
+      flex-shrink: 0;
+    }
+
+    /* Filtro Rápido por Restrição + Busca */
+    .filter-panel {
+      padding: 18px 20px 14px;
+      border-bottom: 1px solid var(--line);
+      background: var(--paper);
+    }
+
+    .filter-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 10px;
+    }
+
+    .filter-title {
+      font-family: var(--font-serif);
+      font-size: 17px;
+      font-weight: 600;
+    }
+
+    .filter-counter {
+      font-size: 11.5px;
+      color: var(--ink-muted);
+      font-weight: 600;
+    }
+
+    .search-box {
+      position: relative;
+      margin-bottom: 12px;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 11px 36px 11px 14px;
+      background: var(--paper-card);
+      border: 1px solid var(--line-dark);
+      border-radius: 6px;
+      font-size: 13.5px;
+      color: var(--ink);
+    }
+
+    .search-input:focus {
+      outline: none;
+      border-color: var(--olive);
+    }
+
+    .search-clear {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      font-size: 16px;
+      color: var(--ink-muted);
+      cursor: pointer;
+      display: none;
+    }
+
+    .diet-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .diet-btn {
+      padding: 7px 11px;
+      font-size: 11.5px;
+      font-weight: 600;
+      border: 1px solid var(--line-dark);
+      background: var(--paper-card);
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .diet-btn.active {
+      background: var(--terracotta);
+      color: #FFF;
+      border-color: var(--terracotta);
+    }
+
+    /* Abas de Categorias Reais do Catálogo */
+    .cat-sticky {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: rgba(246, 242, 235, 0.97);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line-dark);
+      padding: 10px 20px;
+      display: flex;
+      gap: 7px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .cat-sticky::-webkit-scrollbar {
+      display: none;
+    }
+
+    .cat-tab {
+      padding: 7px 13px;
+      font-size: 12px;
+      font-weight: 600;
+      white-space: nowrap;
+      border: 1px solid var(--line-dark);
+      background: var(--paper-card);
+      color: var(--ink-soft);
+      border-radius: 4px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .cat-tab .cat-count {
+      font-size: 10px;
+      padding: 1px 5px;
+      border-radius: 3px;
+      background: var(--paper-warm);
+      color: var(--ink-muted);
+    }
+
+    .cat-tab.active {
+      background: var(--ink);
+      color: var(--paper);
+      border-color: var(--ink);
+    }
+
+    .cat-tab.active .cat-count {
+      background: rgba(255,255,255,0.18);
+      color: #FFF;
+    }
+
+    /* Lista de Produtos Estilo Cardápio Editorial */
+    .menu-container {
+      padding: 8px 20px 24px;
+    }
+
+    .category-group-header {
+      margin-top: 20px;
+      margin-bottom: 6px;
+      padding-bottom: 6px;
+      border-bottom: 1.5px solid var(--ink);
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .category-group-title {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .category-group-sub {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--terracotta);
+      font-weight: 700;
+    }
+
+    .menu-item {
+      display: grid;
+      grid-template-columns: 86px 1fr;
+      gap: 14px;
+      padding: 15px 0;
+      border-bottom: 1px solid var(--line);
+      align-items: start;
+    }
+
+    .menu-thumb-wrap {
+      width: 86px;
+      height: 86px;
+      border-radius: 5px;
+      overflow: hidden;
+      border: 1px solid var(--line-dark);
+      background: var(--paper-warm);
+      position: relative;
+      cursor: pointer;
+    }
+
+    .menu-thumb {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .encomenda-flag {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(35, 31, 28, 0.84);
+      color: #F6F2EB;
+      font-size: 8.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      text-align: center;
+      padding: 2px 3px;
+      font-weight: 700;
+    }
+
+    .menu-content {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+
+    .menu-title-line {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .menu-name {
+      font-family: var(--font-serif);
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.25;
+    }
+
+    .menu-price {
+      font-family: var(--font-serif);
+      font-size: 14.5px;
+      font-weight: 700;
+      color: var(--olive);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .menu-desc {
+      font-size: 12.2px;
+      color: var(--ink-soft);
+      margin-top: 4px;
+      line-height: 1.42;
+    }
+
+    .menu-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 9px;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .menu-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .tag-pill {
+      font-size: 9.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 2px 6px;
+      border-radius: 3px;
+      background: var(--paper-warm);
+      color: var(--ink-soft);
+      border: 1px solid var(--line);
+      font-weight: 600;
+    }
+
+    .tag-pill.zero-sugar {
+      background: var(--terracotta-tint);
+      color: var(--terracotta);
+      border-color: rgba(182, 83, 50, 0.25);
+    }
+
+    .tag-pill.low-carb {
+      background: var(--olive-tint);
+      color: var(--olive);
+      border-color: rgba(45, 74, 52, 0.25);
+    }
+
+    .qty-control {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid var(--olive);
+      border-radius: 4px;
+      overflow: hidden;
+      background: var(--paper-card);
+    }
+
+    .add-btn {
+      padding: 5px 11px;
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--olive);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+
+    .add-btn:hover {
+      background: var(--olive-tint);
+    }
+
+    .qty-stepper {
+      display: inline-flex;
+      align-items: center;
+      background: var(--olive);
+      color: #FFF;
+    }
+
+    .qty-stepper button {
+      width: 26px;
+      height: 26px;
+      border: none;
+      background: transparent;
+      color: #FFF;
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .qty-stepper span {
+      font-size: 12px;
+      font-weight: 700;
+      min-width: 20px;
+      text-align: center;
+    }
+
+    /* Seção de Endereço & Horários */
+    .store-card {
+      margin: 10px 20px 24px;
+      padding: 20px;
+      background: var(--paper-card);
+      border: 1px solid var(--line-dark);
+      border-radius: 6px;
+    }
+
+    .store-card h3 {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      margin-bottom: 6px;
+    }
+
+    .store-address {
+      font-size: 13px;
+      color: var(--ink-soft);
+      margin-bottom: 14px;
+    }
+
+    .hours-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12.5px;
+      margin-bottom: 16px;
+    }
+
+    .hours-table td {
+      padding: 6px 0;
+      border-bottom: 1px dashed var(--line);
+    }
+
+    .hours-table td:last-child {
+      text-align: right;
+      font-weight: 600;
+    }
+
+    .route-buttons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .route-btn {
+      padding: 10px 12px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 600;
+      border: 1px solid var(--line-dark);
+      border-radius: 4px;
+      background: var(--paper);
+      color: var(--ink);
+    }
+
+    /* Barra Flutuante de Comanda */
+    .comanda-dock {
+      position: fixed;
+      bottom: 14px;
+      left: 50%;
+      transform: translateX(-50%) translateY(150%);
+      width: calc(100% - 28px);
+      max-width: 540px;
+      background: var(--ink);
+      color: var(--paper);
+      border: 1px solid #3E3731;
+      border-radius: 6px;
+      padding: 13px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 14px 34px rgba(0, 0, 0, 0.28);
+      z-index: 90;
+      transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+    }
+
+    .comanda-dock.visible {
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .dock-left {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .dock-kicker {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #D9B478;
+      font-weight: 700;
+    }
+
+    .dock-total {
+      font-family: var(--font-serif);
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .dock-cta {
+      background: var(--olive);
+      color: #FFF;
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 9px 14px;
+      border-radius: 4px;
+      font-size: 12.5px;
+      font-weight: 700;
+    }
+
+    /* Modal Comanda e Modal Fotos */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(25, 22, 19, 0.65);
+      backdrop-filter: blur(3px);
+      z-index: 120;
+      display: none;
+      align-items: flex-end;
+      justify-content: center;
+    }
+
+    .modal-backdrop.open {
+      display: flex;
+    }
+
+    .modal-sheet {
+      width: 100%;
+      max-width: 580px;
+      max-height: 90vh;
+      background: var(--paper);
+      border-top: 2px solid var(--ink);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .modal-head {
+      padding: 16px 20px;
+      background: var(--paper-card);
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .modal-head h3 {
+      font-family: var(--font-serif);
+      font-size: 19px;
+    }
+
+    .close-btn {
+      background: none;
+      border: 1px solid var(--line-dark);
+      width: 32px;
+      height: 32px;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .modal-body {
+      padding: 18px 20px;
+      overflow-y: auto;
+    }
+
+    .receipt-box {
+      background: #FFFDF8;
+      border: 1px solid var(--line-dark);
+      padding: 16px;
+      margin-bottom: 16px;
+    }
+
+    .receipt-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px dashed var(--line);
+      font-size: 13px;
+    }
+
+    .form-group {
+      margin-bottom: 12px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 700;
+      color: var(--ink-soft);
+      margin-bottom: 5px;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid var(--line-dark);
+      background: var(--paper-card);
+      border-radius: 4px;
+      font-size: 13.5px;
+    }
+
+    .whatsapp-submit {
+      width: 100%;
+      padding: 14px;
+      background: var(--olive);
+      color: #FFF;
+      border: none;
+      border-radius: 5px;
+      font-family: var(--font-serif);
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    footer {
+      padding: 20px;
+      text-align: center;
+      font-size: 11.5px;
+      color: var(--ink-muted);
+      border-top: 1px solid var(--line);
+    }
+
+    .photo-sync-btn {
+      margin-top: 10px;
+      padding: 6px 12px;
+      font-size: 11px;
+      border: 1px dashed var(--line-dark);
+      background: var(--paper-card);
+      color: var(--ink-soft);
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Faixa de Status em Tempo Real -->
+  <div class="top-ribbon">
+    <div class="status-indicator">
+      <span class="status-dot" id="statusDot"></span>
+      <span id="statusLabel">Verificando fornada...</span>
+    </div>
+    <span>Jaraguá do Sul • SC</span>
+  </div>
+
+  <!-- Cabeçalho Editorial -->
+  <header class="bakery-header">
+    <div class="header-meta">
+      <span>Padaria Funcional • @panfit7</span>
+      <span>Nova Brasília</span>
+    </div>
+
+    <div class="brand-lockup">
+      <div class="brand-seal">
+        <span class="brand-seal-title">Panfit</span>
+        <span class="brand-seal-sub">100% Livre</span>
+      </div>
+      <div>
+        <h1 class="brand-title">Panificação artesanal <em>sem restrições.</em></h1>
+        <p class="brand-story">
+          Catálogo oficial completo: pães funcionais, bolos, cucas com Manteiga Ghee, congelados com queijo de búfala e linha Low Carb Zero Açúcar.
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Garantias da Cozinha -->
+  <section class="Zero-grid">
+    <div class="zero-cell">
+      <strong>100% Sem Glúten</strong>
+      <span>Zero contaminação</span>
+    </div>
+    <div class="zero-cell">
+      <strong>100% Sem Leite</strong>
+      <span>Zero lactose / APLV</span>
+    </div>
+    <div class="zero-cell">
+      <strong>Linha Low Carb</strong>
+      <span>Opções Zero Açúcar</span>
+    </div>
+  </section>
+
+  <!-- Links Principais do Biosite -->
+  <section class="quick-links">
+    <a href="#cardapio-panfit" class="bio-row featured">
+      <div class="bio-left">
+        <span class="bio-kicker">52 Produtos do Catálogo Oficial</span>
+        <span class="bio-main">Montar Pedido na Vitrine Interativa</span>
+        <span class="bio-sub">Escolha seus itens abaixo e envie a comanda pronta para o WhatsApp</span>
+      </div>
+      <span class="bio-arrow">↓</span>
+    </a>
+
+    <a href="https://wa.me/c/183506957258893" target="_blank" rel="noopener" class="bio-row">
+      <div class="bio-left">
+        <span class="bio-kicker">Link Direto do App</span>
+        <span class="bio-main">Abrir Catálogo Nativo no WhatsApp</span>
+        <span class="bio-sub">Visualizar coleção oficial direto no aplicativo do WhatsApp</span>
+      </div>
+      <span class="bio-arrow">↗</span>
+    </a>
+
+    <a href="https://wa.me/5547997037045?text=Ol%C3%A1%2C%20Panfit!%20Gostaria%20de%20fazer%20uma%20encomenda%20especial%20de%20bolo%20ou%20cesta." target="_blank" rel="noopener" class="bio-row">
+      <div class="bio-left">
+        <span class="bio-kicker">Atendimento Direto • (47) 99703-7045</span>
+        <span class="bio-main">Encomendar Bolos de Festa, Coração & Cestas</span>
+        <span class="bio-sub">Bolo Smash, Coração Piscina, Vulcão, Naked Cake e Docinhos</span>
+      </div>
+      <span class="bio-arrow">→</span>
+    </a>
+  </section>
+
+  <!-- Painel de Busca e Filtro por Restrição -->
+  <section class="filter-panel" id="cardapio-panfit">
+    <div class="filter-header">
+      <h2 class="filter-title">Catálogo Oficial Panfit</h2>
+      <span class="filter-counter" id="itemsCounter">52 itens disponíveis</span>
+    </div>
+
+    <div class="search-box">
+      <input type="text" id="searchInput" class="search-input" placeholder="Buscar pão, cuca, lasanha, bolo zero açúcar, ghee..." oninput="handleSearch(this.value)" />
+      <button class="search-clear" id="searchClear" onclick="handleSearch('')">✕</button>
+    </div>
+
+    <div class="diet-tags">
+      <button class="diet-btn active" onclick="setDietFilter('todos', this)">Todos (100% Sem Glúten e Sem Leite)</button>
+      <button class="diet-btn" onclick="setDietFilter('zero-acucar', this)">Zero Açúcar / Diabéticos</button>
+      <button class="diet-btn" onclick="setDietFilter('low-carb', this)">Low Carb</button>
+      <button class="diet-btn" onclick="setDietFilter('pronta-entrega', this)">Práticos & Congelados</button>
+    </div>
+  </section>
+
+  <!-- Abas das Categorias Reais Extraídas do WhatsApp -->
+  <nav class="cat-sticky" id="categoryTabs"></nav>
+
+  <!-- Lista de Produtos -->
+  <main class="menu-container" id="menuContainer"></main>
+
+  <!-- Informações Físicas da Padaria -->
+  <section class="store-card">
+    <h3>Visite a Panfit em Jaraguá do Sul</h3>
+    <p class="store-address">Rua José Emmendoerfer, 1837 — Bairro Nova Brasília, Jaraguá do Sul - SC</p>
+
+    <table class="hours-table">
+      <tr>
+        <td>Segunda a Sexta-feira</td>
+        <td>08:30 às 18:30</td>
+      </tr>
+      <tr>
+        <td>Sábado</td>
+        <td>08:30 às 13:00</td>
+      </tr>
+      <tr>
+        <td>Domingo</td>
+        <td>Fechado</td>
+      </tr>
+    </table>
+
+    <div class="route-buttons">
+      <a href="https://www.google.com/maps/search/?api=1&query=Panfit+Rua+Jose+Emmendoerfer+1837+Jaragua+do+Sul" target="_blank" rel="noopener" class="route-btn">Abrir no Google Maps</a>
+      <a href="https://www.instagram.com/panfit7/" target="_blank" rel="noopener" class="route-btn">Instagram @panfit7</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>Panfit Panificadora Funcional — Todos os produtos são livres de glúten e lactose.</p>
+    <button class="photo-sync-btn" onclick="openPhotoModal()">📷 Substituir Fotos Reais em 1 Clique</button>
+  </footer>
+
+  <!-- Barra Flutuante da Comanda -->
+  <div class="comanda-dock" id="comandaDock" onclick="openComandaModal()">
+    <div class="dock-left">
+      <span class="dock-kicker" id="dockCount">0 itens na comanda</span>
+      <span class="dock-total" id="dockTotal">R$ 0,00</span>
+    </div>
+    <span class="dock-cta">Revisar e Enviar Pedido →</span>
+  </div>
+
+  <!-- Modal da Comanda -->
+  <div class="modal-backdrop" id="comandaModal" onclick="if(event.target===this) closeComandaModal()">
+    <div class="modal-sheet">
+      <div class="modal-head">
+        <h3>Sua Comanda Panfit</h3>
+        <button class="close-btn" onclick="closeComandaModal()">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="receipt-box" id="receiptItems"></div>
+
+        <div class="form-group">
+          <label>Seu Nome</label>
+          <input type="text" id="clientName" class="form-input" placeholder="Como podemos te chamar?" />
+        </div>
+
+        <div class="form-group">
+          <label>Como prefere receber?</label>
+          <select id="deliveryMode" class="form-input">
+            <option value="Retirada na Loja (Nova Brasília)">Retirar na Padaria (Rua José Emmendoerfer, 1837)</option>
+            <option value="Consultar Entrega / Motoboy">Consultar Entrega em Jaraguá do Sul</option>
+            <option value="Encomenda Agendada">Encomenda Agendada para Data Específica</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Observações (Ex: sabor de recheio, horário, etc.)</label>
+          <input type="text" id="clientNotes" class="form-input" placeholder="Ex: Creme belga ou brigadeiro, horário de retirada..." />
+        </div>
+
+        <button class="whatsapp-submit" onclick="sendOrderToWhatsApp()">
+          Enviar Pedido para o WhatsApp da Panfit
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Sincronizador de Fotos Reais -->
+  <div class="modal-backdrop" id="photoModal" onclick="if(event.target===this) closePhotoModal()">
+    <div class="modal-sheet">
+      <div class="modal-head">
+        <h3>Vincular Fotos Originais do WhatsApp</h3>
+        <button class="close-btn" onclick="closePhotoModal()">✕</button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size:12.5px; color:var(--ink-soft); margin-bottom:14px;">
+          Clique em <strong>"Trocar Foto"</strong> em qualquer um dos 52 produtos abaixo para selecionar uma foto salva no seu computador, ou clique em <strong>Exportar Código</strong> para salvar em definitivo.
+        </p>
+        <div style="display:flex; gap:8px; margin-bottom:14px;">
+          <button class="route-btn" style="flex:1; background:var(--olive); color:#fff; cursor:pointer;" onclick="exportUpdatedCatalog()">📋 Copiar JSON com Novas Fotos</button>
+          <button class="route-btn" style="cursor:pointer;" onclick="resetCustomPhotos()">Restaurar Padrão</button>
+        </div>
+        <div id="photoEditorList" style="display:flex; flex-direction:column; gap:8px;"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Categorias Oficiais extraídas do catálogo WhatsApp da Panfit
+    const CATEGORIES = [
+      { id: 'todos', name: 'Todos os Itens' },
+      { id: 'paes', name: 'Pães' },
+      { id: 'bolos', name: 'Bolos' },
+      { id: 'confeitados', name: 'Bolos Confeitados & Docinhos' },
+      { id: 'cucas', name: 'Cucas' },
+      { id: 'cookies', name: 'Cookies e Broa' },
+      { id: 'congelados', name: 'Congelados & Salgados' },
+      { id: 'loja', name: 'Itens da Loja & Cestas' }
+    ];
+
+    // Todos os 52 produtos reais extraídos do catálogo da Panfit (@panfit7)
+    const DEFAULT_PRODUCTS = [
+      // ================= PÃES =================
+      {
+        id: "pf84",
+        cat: "paes",
+        name: "Pão Tradicional",
+        desc: "Pão artesanal sem glúten e sem leite, com textura macia e sem grãos. Peso 370g.",
+        price: 14.30,
+        priceText: "R$ 14,30",
+        tags: ["370g", "Sem Grãos", "Sem Leite"],
+        zeroSugar: false,
+        lowCarb: false,
+        encomenda: false,
+        img: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=400&q=80"
+      },
+      {
+        id: "pf80",
+        cat: "paes",
+        name: "Pão Caseirinho",
+        desc: "Pão artesanal sem conservantes, rico em fibras da farinha de linhaça. Vegano: sem glúten e sem derivados animais. Peso 380g.",
+        price: 14.50,
+        priceText: "R$ 14,50",
+        tags: ["380g", "Vegano", "Com Linhaça"],
+        zeroSugar: false,
+        lowCarb: false,
+        encomenda: false,
+        img: "https://images.unsplash.com/photo-1586444248902-2f64eddc13df?auto=format&fit=crop&w=400&q=80"
+      },
+      {
+        id: "pf83",
+        cat: "paes",
+        name: "Pão de Abóbora e Chia",
+        desc: "Pão artesanal integral, sem açúcar, sem glúten, sem leite e sem conservantes. Rico em fibras e baixo em calorias. Peso 350g.",
+        price: 17.50,
+        priceText: "R$ 17,50",
+        tags: ["350g", "Sem Açúcar", "Funcional"],
+        zeroSugar: true,
+        lowCarb: false,
+        encomenda: false,
+        img: "https://images.unsplash.com/photo-1549931319-a545dcf3bc73?auto=format&fit=crop&w=400&q=80"
+      },
+      {
+        id: "pf78",
+        cat: "paes",
+        name: "Pão de Batata Doce",
+        desc: "Pão artesanal 100% integral. Sem açúcar, sem glúten, sem leite e sem conservantes. Peso 410g.",
+        price: 17.50,
+        priceText: "R$ 17,50",
+        tags: ["410g", "Sem Açúcar", "100% Integral"],
+        zeroSugar: true,
+        lowCarb: false,
+        encomenda: false,
+        img: "https://images.unsplash.com/photo-1598373182133-52452f7691ef?auto=format&fit=crop&w=400&q=80"
+      },
+      {
+        id: "pf79",
+        cat: "paes",
+        name: "Pão de Cenoura",
+        desc: "Pão artesanal sem conservantes, rico em fibras, totalmente sem glúten e sem leite. Peso 430g.",
+        price: 17.50,
+        priceText: "R$ 17,50",
+        tags: ["430g", "Rico em Fibras"],
+        zeroSugar: false,
+        lowCarb: false,
+        encomenda: false,
+        img: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=400&q=80"
+      },
+      {
+        id: "pf91",
+        cat: "paes",
+        name: "Pão de Milho",
+        desc: "Pão caseiro macio de milho, 100% sem glúten, sem leite e zero lactose.",
+        price: 17.50,
+        priceText: "R$ 17,50",
+        tags: ["Sem Glúten", "Sem Leite"],
+        zeroSugar: false,
+        lowCarb: false,
+        encomenda: false,
+        img: "https://images.unsplash.com/photo-1586444248902-2f64eddc13df?auto=format&fit=crop&w=400&q=80"
+      },
+      {
+        id: "pf46",
+        cat: "paes",
+        name: "Pão Hambúrguer 150g",
+        desc: "Pão de hambúrguer macio e funcional, totalmente livre de glúten, leite/lactose e ovos.",
+        price: 10.30,
+        priceText: "R$ 10,30",
+        tags: ["150g", "Sem Ovos", "Vegano"],
+        zeroSugar: false,
+        lowCarb: false,
+        encomenda: false,
+        img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=400&q=80"
+      },
+      {
+        id: "pf37",
+        cat: "paes",
+        name: "Pão Low Carb de Castanhas (Fatiado)",
+        desc: "Pão low carb rico em castanhas e gorduras boas, já fatiado e congelado para praticidade diária.",
+        price: 28.90,
+        priceText: "R$ 28,90",
+        tags: ["Low Carb", "Fatiado"],
+        zeroSugar: true,
+        lowCarb: true,
+        encomenda: false,
+        img: "https://images.unsplash.com/photo-1549931319-a545dcf3bc73?auto=format&fit=crop&w=400&q=80"
+      },
+      {
+        id: "pf38",
+        cat: "paes",
+        name: "Pão Low Carb de Amêndoas (Fatiado)",
+        desc: "Pão low carb de farinha de amêndoas, fatiado e congelado. Ideal para dieta cetogênica ou controle glicêmico.",
+        price: 28.90,
+        priceText: "R$ 28,90",
+        tags: ["Low Carb", "Amêndoas"],
+        zeroSugar: true,
+        lowCarb: true,
+        encomenda: false,
+        img: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=400&q=80"
+      },
+
+      // ================= BOLOS CASEIROS & FUNCIONAIS =================
+      {
+        id: "pf24",
+        cat: "bolos",
+        name: "Bolo de Cenoura com Castanha Zero Açúcar",
+        desc: "Zero açúcar e zero leite! Bolinho low carb de cenoura com castanhas super macio e delicioso.",
+        price: 42.90,
+        priceText: "R$ 42,90",
+        tags: ["Zero Açúcar", "Low Carb"],
+        zeroSugar: true,
+        lowCarb: true,
+        encomenda: false,
+        img: "https://images.unsplash.com/photo-1621303837174-89787a7d4729?auto=format&fit=crop&w=400&q=80"
+      },
+      {
+        id: "pf72",
+        cat: "bolos",
+        name: "Bolo Zero Açúcar de Cenoura com Castanha (Tamanho Família)",
+        desc: "Versão maior do nosso clássico de cenoura com castanha: 100% zero leite, zero glúten e zero açúcar.",
+        price: 85.80,
+        priceText: "R$ 85,80",
+        tags: ["Zero Açúcar", "Zero Leite"],
+        zeroSugar: true,
+        lowCarb: true,
+        encomenda: false,
+        img: "https://images.unsplash.com/photo-1621303837174-89787a7d4729?auto=format&fit=crop&w=400&q=80"
+      },
+      {
+        id: "pf49",
+        cat: "bolos",
+        name: "Bolo Cenoura Trufado (350g)",
+        desc: "Feito com farinha de aveia orgânica e recheado com pedaços de chocolate meio amargo. Dica: aqueça antes de consumir!",
+        price: 39.90,
+        priceText: "R$ 39,90",
+        tags: ["350g", "Aveia Orgânica"],
+        zeroSugar: false,
+        lowCarb: false,
+        encomenda: false,
+        img: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=400&q=80"
+      },
+      {
+        id: "pf50",
+        cat: "bolos",
+        name: "Bolo Cenoura com Calda de Chocolate (290g)",
+        desc: "Formato retangular clássico feito com farinha de aveia orgânica, sem glúten, sem lactose e sem refinados.",
+        price: 31.90,
+        priceText: "R$ 31,90",
+        tags: ["290g", "Sem Refinados"],
+        zeroSugar: false,
+        lowCarb: false,
+        encomenda: false,
+        img: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=400&q=80"
+      },
+      {
+        id: "pf47",
+        cat: "bolos",
+        name: "Bolo Cenoura com Calda Redondo (510g)",
+        desc: "Totalmente livre de glúten e lactose, adoçado com açúcar demerara e calda de chocolate cacau 63%. Peso aprox. 510g.",
+        price: 52.90,
+        priceText: "R$ 52,90",
+        tags: ["510g", "Cacau 63%"],
+        zeroSugar: false,
+        lowCarb: false,
+        encomenda: false,
+        img: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=400&q=80"
+      },
+      {
+        id: "pf43",
+        cat: "bolos",
+        name: "Bolo de Chocolate Retangular (300g)",
+        desc: "Feito com aveia orgânica, açúcar de coco e chocolate 70% cacau. Sem glúten e sem lactose.",
+        price: 31.90,
+        priceText: "R$ 31,90",
+        tags: ["300g", "Cacau 70%"],
+        zeroSugar: false,
+        lowCarb: false,
+        encomenda: false,
+        img: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=400&q=80"
+      },
+      {
+        id: "pf29",
+        cat: "bolos",
+        name: "Bolo de Chocolate Redondo",
+        desc: "Massa macia e sabor intenso de cacau, 100% sem glúten e sem lactose. Feito sob encomenda.",
+        price: 63.00,
+        priceText: "R$ 63,00",
+        tags: ["Sob Encomenda", "Redondo"],
+        zeroSugar: false,
+        lowCarb: false,
+        encomenda: true,
+        img: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=400&q=80"
+      },
+      {
+        id: "pf44",
+        cat: "bolos",
+        name: "Bolo Fubá com Coco",
+        desc: "Bolo artesanal de fubá com coco, sem glúten, sem leite/lactose e sem conservantes, adoçado com açúcar de coco.",
+        price: 39.90,
+        priceText: "R$ 39,90",
+        tags: ["Açúcar de Coco", "Sem Leite"],
+        zeroSugar: false,
+        lowCarb: false,
+        encomenda: false,
+        img: "https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?auto=format&fit=crop&w=400&q=80"
+      },
+      {
+        id: "pf45",
+        cat: "bolos",
+        name: "Bolo Fubá com Goiabada",
+        desc: "Clássico bolo de fubá fofinho com pedaços de goiabada, 100% sem glúten e sem leite.",
+        price: 39.90,
+        priceText: "R$ 39,90",
+        tags: ["Com Goiabada", "Sem Leite"],
+        zeroSugar: false,
+        lowCarb: false,
+        encomenda: false,
+        img: "https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?auto=format&fit=crop&w=400&q=80"
+      },
+      {
+        id: "pf75",
+        cat: "bolos",
+        name: "Bolo de Laranja",
+        desc: "Bolo caseiro, macio e cheio de aroma natural de laranja, perfeito para o café. Sem glúten e zero lactose.",
+        price: 42.00,
+        priceText: "R$ 42,00",
+        tags: ["Caseiro", "Sem Leite"],
+        zeroSugar: false,
+        lowCarb: false,
+        encomenda: false,
+        img: "https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?auto=format&fit=crop&w=400&q=80"
+      },
+      {
+        id: "pf48",
+        cat: "bolos",
+        name: "Bolo Baunilha com Creme Belga (520g)",
+        desc: "Bolo delicado de baunilha com recheio de creme belga artesanal sem glúten e sem lactose. Peso aprox. 520g.",
+        price: 48.80,
+        priceText: "R$ 48,80",
+        tags: ["520g", "Creme Belga"],
+        zeroSugar: false,
+        lowCarb: false,
+        encomenda: false,
+        img: "https://images.unsplash.com/photo-1535141192574-5d4897c12636?auto=format&fit=crop&w=400&q=80"
+      },
+      {
+        id: "pf81",
+        cat: "bolos",
+        name: "Bolo Chocolate com Creme Belga",
+        desc: "Combinação de massa de chocolate cacau com recheio cremoso de creme belga sem lactose e sem glúten.",
+        price: 68.90,
+        priceText: "R$ 68,90",
+        tags: ["Recheado", "Sem Lactose"],
+        zeroSugar: false,
+        lowCarb: false,
+        encomenda: false,
+        img: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=400&q=80"
+      },
+      {
+        id: "pf34",
+        cat: "bolos",
+        name: "Bolo Prestígio (450g)",
+        desc: "Massa de chocolate com camada generosa de recheio de beijinho sem glúten e sem lactose. Serve aprox. 3 pessoas.",
+        price: 60.00,
+        priceText: "R$ 60,00",
+        tags: ["450g", "Sob Encomenda"],
+        zeroSugar: false,
+        lowCarb: false,
+        encomenda: true,
+        img: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=400&q=80"
+      },
+      {
+        id: "pf33",
+        cat: "bolos",
+        name: "Bolo Vulcão (750g)",
+        desc: "Centro macio e super cremoso. Escolha entre duas versões: Recheio de Chocolate ou Recheio de Creme Belga.",
+        price: 95.00,
+        priceText: "R$ 95,00",
+        tags: ["750g", "Sob Encomenda"],
+        zeroSugar: false,
+        lowCarb: false,
+        encomenda: true,
+        img: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=400&q=80"
+      },
+
+      // ================= BOLOS CONFEITADOS & DOCINHOS =================
+      {
+        id: "pf26",
+        cat: "confeitados",
+        name: "Naked Zero Açúcar de Creme Belga",
+        desc: "Massa de cenoura low carb com creme belga zero açúcar. Rico em gorduras boas, livre de glúten e lactose.",
+        price: 58.90,
+        priceText: "R$ 58,90",
+        tags: ["Zero Açúcar", "Low Carb"],
+        zeroSugar: true,
+        lowCarb: true,
+        encomenda: false,
+        img: "https://images.unsplash.com/photo-1535141192574-5d4897c12636?auto=format&fit=crop&w=400&q=80"
+      },
+      {
+        id: "pf27",
+        cat: "confeitados",
+        name: "Naked Zero Açúcar de Brigadeiro",
+        desc: "Massa de cenoura funcional com recheio de brigadeiro feito com chocolate 70% cacau zero açúcar.",
+        price: 65.00,
+        priceText: "R$ 65,00",
+        tags: ["Zero Açúcar", "Cacau 70%"],
+        zeroSugar: true,
+        lowCarb: true,
+        encomenda: false,
+        img: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=400&q=80"
+      },
+      {
+        id: "pf66",
+        cat: "confeitados",
+        name: "Coração Zero Açúcar de Chocolate (600g)",
+        desc: "Bolo especial em formato de coração 100% zero açúcar, sem glúten e sem lactose. Peso aprox. 600g.",
+        price: 156.90,
+        priceText: "R$ 156,90",
+        tags: ["Zero Açúcar", "600g"],
+        zeroSugar: true,
+        lowCarb: true,
+        encomenda: true,
+        img: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=400&q=80"
+      },
+      {
+        id: "pf30",
+        cat: "confeitados",
+        name: "Bolo de Cenoura Coração",
+        desc: "Nosso queridinho de cenoura em formato especial de coração para presentear e surpreender. Feito sob encomenda.",
+        price: 55.90,
+        priceText: "R$ 55,90",
+        tags: ["Formato Coração", "Sob Encomenda"],
+        zeroSugar: false,
+        lowCarb: false,
+        encomenda: true,
+        img: "https://images.unsplash.com/photo-1621303837174-89787a7d4729?auto=format&fit=crop&w=400&q=80"
+      },
+      {
+        id: "pf35",
+        cat: "confeitados",
+        name: "Coração Due",
+        desc: "Bolo em formato de coração com decoração dupla diferenciada para surpreender. Feito sob encomenda.",
+        price: 85.50,
+        priceText: "R$ 85,50",
+        tags: ["Presente", "Sob Encomenda"],
+        zeroSugar: false,
+        lowCarb: false,
+        encomenda: true,
+        img: "https://images.unsplash.com/photo-1535141192574-5d4897c12636?auto=format&fit=crop&w=400&q=80"
+      },
+      {
+        id: "pf74",
+        cat: "confeitados",
+        name: "Coração de Chocolate Piscina (600g)",
+        desc: "Formato piscina transbordando calda de chocolate! Serve aproximadamente 4 pessoas (600g).",
+        price: 87.20,
+        priceText: "R$ 87,20",
+        tags: ["600g", "Formato Piscina"],
+        zeroSugar: false,
+        lowCarb: false,
+        encomenda: true,
+        img: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=400&q=80"
+      },
+      {
+        id: "pf70",
+        cat: "confeitados",
+        name: "Coração com Cereja (Formato Piscina)",
+        desc: "Bolo coração formato piscina de chocolate com cerejas. Feito sob encomenda.",
+        price: 95.50,
+        priceText: "R$ 95,50",
+        tags: ["Formato Piscina", "Sob Encomenda"],
+        zeroSugar: false,
+        lowCarb: false,
+        encomenda: true,
+        img: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=400&q=80"
+      },
+      {
+        id: "pf71",
+        cat: "confeitados",
+        name: "Coração com Morango (Formato Piscina)",
+        desc: "Massa fofinha, muito recheio cremoso e morangos fresquinhos no topo em formato piscina.",
+        price: 97.90,
+        priceText: "R$ 97,90",
+        tags: ["Morangos Frescos", "Sob Encomenda"],
+        zeroSugar: false,
+        lowCarb: false,
+        encomenda: true,
+        img: "https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=400&q=80"
+      },
+      {
+        id: "pf42",
+        cat: "confeitados",
+        name: "Bolo Coração com Brigadeiro",
+        desc: "Coração super chocolatudo artesanal sem glúten e sem lactose para presentear. Feito por encomenda.",
+        price: 107.00,
+        priceText: "R$ 107,00",
+        tags: ["Brigadeiro", "Sob Encomenda"],
+        zeroSugar: false,
+        lowCarb: false,
+        encomenda: true,
+        img: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=400&q=80"
+      },
+      {
+        id: "pf25",
+        cat: "confeitados",
+        name: "Bolo Smash the Cake (Sem Glúten, Leite e Açúcar)",
+        desc: "Massa de baunilha segura para bebês (livre de glúten, lactose e açúcar). 15cm: R$ 80 | 17cm: R$ 95 | 20cm: R$ 120. Encomenda 24h.",
+        price: 80.00,
+        priceText: "A partir de R$ 80,00",
+        tags: ["Zero Açúcar", "Infantil / Bebês"],
+        zeroSugar: true,
+        lowCarb: false,
+        encomenda: true,
+        img: "https://images.unsplash.com/photo-1535141192574-5d4897c12636?auto=format&fit=crop&w=400&q=80"
+      },
+      {
+        id: "pf88",
+        cat: "confeitados",
+        name: "Bolo no Copo Chocolate Zero Açúcar",
+        desc: "Zero adição de açúcar! Massa de chocolate com recheio de chocolate 70% cacau super cremoso.",
+        price: 26.80,
+        priceText: "R$ 26,80",
+        tags: ["Zero Açúcar", "Cacau 70%"],
+        zeroSugar: true,
+        lowCarb: true,
+        encomenda: false,
+        img: "https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?auto=format&fit=crop&w=400&q=80"
+      },
+      {
+        id: "pf87",
+        cat: "confeitados",
+        name: "Bolo no Copo Creme Belga com Frutas Vermelhas",
+        desc: "Massa leve de baunilha combinada com creme belga e geleia artesanal de frutas vermelhas.",
+        price: 25.90,
+        priceText: "R$ 25,90",
+        tags: ["Frutas Vermelhas", "No Copo"],
+        zeroSugar: false,
+        lowCarb: false,
+        encomenda: false,
+        img: "https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=400&q=80"
+      },
+      {
+        id: "pf85",
+        cat: "confeitados",
+        name: "Bolo Cenoura no Copo",
+        desc: "Bolo super macio e cremoso no copo com calda intensa de chocolate sem glúten e sem lactose.",
+        price: 22.80,
+        priceText: "R$ 22,80",
+        tags: ["Pronta Entrega", "No Copo"],
+        zeroSugar: false,
+        lowCarb: false,
+        encomenda: false,
+        img: "https://images.unsplash.com/photo-1621303837174-89787a7d4729?auto=format&fit=crop&w=400&q=80"
+      },
+      {
+        id: "pf90",
+        cat: "confeitados",
+        name: "Bolo de Copo Dois Amores",
+        desc: "Massa macia intercalada com creme branco e ganache de chocolate sem glúten e sem lactose.",
+        price: 22.80,
+        priceText: "R$ 22,80",
+        tags: ["Dois Amores", "No Copo"],
+        zeroSugar: false,
+        lowCarb: false,
+        encomenda: false,
+        img: "https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?auto=format&fit=crop&w=400&q=80"
+      },
+      {
+        id: "pf32",
+        cat: "confeitados",
+        name: "Cupcake Zero Açúcar Low Carb",
+        desc: "Massa de cenoura recheada com brigadeiro ou creme belga. Produto Low Carb sem glúten, lactose ou açúcar.",
+        price: 15.00,
+        priceText: "R$ 15,00",
+        tags: ["Zero Açúcar", "Low Carb"],
+        zeroSugar: true,
+        lowCarb: true,
+        encomenda: false,
+        img: "https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?auto=format&fit=crop&w=400&q=80"
+      },
+      {
+        id: "pf89",
+        cat: "confeitados",
+        name: "Cupcake de Chocolate / Creme Belga",
+        desc: "Cupcake artesanal recheado com ganache de chocolate ou creme belga sem glúten e sem lactose.",
+        price: 12.90,
+        priceText: "R$ 12,90",
+        tags: ["Unidade", "Recheado"],
+        zeroSugar: false,
+        lowCarb: false,
+        encomenda: false,
+        img: "https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?auto=format&fit=crop&w=400&q=80"
+      },
+      {
+        id: "pf41",
+        cat: "confeitados",
+        name: "Brigadeiro Gourmet (2 unidades)",
+        desc: "Brigadeiro artesanal reduzido em açúcares com granulado zero açúcar 70% cacau. Sem glúten e sem lactose.",
+        price: 15.00,
+        priceText: "R$ 15,00",
+        tags: ["2 Unidades", "Cacau 70%"],
+        zeroSugar: true,
+        lowCarb: false,
+        encomenda: false,
+        img: "https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?auto=format&fit=crop&w=400&q=80"
+      },
+      {
+        id: "pf31",
+        cat: "confeitados",
+        name: "Docinhos para Festa (Cento / Encomenda)",
+        desc: "Cento de Brigadeiro ou Beijinho (R$ 450,00 o cento — 12g cada). Pedido mínimo de 30 unidades.",
+        price: 135.00,
+        priceText: "Mín. 30 un (R$ 450/cento)",
+        tags: ["Festas", "Mín. 30 un."],
+        zeroSugar: false,
+        lowCarb: false,
+        encomenda: true,
+        img: "https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?auto=format&fit=crop&w=400&q=80"
+      },
+
+      // ================= CUCAS ARTESANAIS =================
+      {
+        id: "pf59",
+        cat: "cucas",
+        name: "Cuca de Chocolate 325g",
+        desc: "Cuca alemã artesanal com farofa crocante feita com Manteiga Ghee e chocolate zero leite.",
+        price: 39.90,
+        priceText: "R$ 39,90",
+        tags: ["325g", "Manteiga Ghee"],
+        zeroSugar: false,
+        lowCarb: false,
+        encomenda: false,
+        img: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=400&q=80"
+      },
+      {
+        id: "pf60",
+        cat: "cucas",
+        name: "Cuca de Chocolate Branco 325g",
+        desc: "Cuca macia com chocolate branco zero leite e farofa crocante preparada com Manteiga Ghee.",
+        price: 39.90,
+        priceText: "R$ 39,90",
+        tags: ["325g", "Chocolate Branco Zero"],
+        zeroSugar: false,
+        lowCarb: false,
+        encomenda: false,
+        img: "https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?auto=format&fit=crop&w=400&q=80"
+      },
+      {
+        id: "pf61",
+        cat: "cucas",
+        name: "Cuca de Castanha do Pará 325g",
+        desc: "Cuca funcional de Castanha do Pará sem glúten e sem lactose, nutritiva e crocante.",
+        price: 39.90,
+        priceText: "R$ 39,90",
+        tags: ["325g", "Castanha do Pará"],
+        zeroSugar: false,
+        lowCarb: false,
+        encomenda: false,
+        img: "https://images.unsplash.com/photo-1549931319-a545dcf3bc73?auto=format&fit=crop&w=400&q=80"
+      },
+
+      // ================= COOKIES E BROA =================
+      {
+        id: "pf62",
+        cat: "cookies",
+        name: "Cookies Low Carb Avelã 100g",
+        desc: "Feito com avelã, farinha de aveia, farinha de castanha de caju, stevia e chocolate 70% cacau zero açúcar.",
+        price: 21.90,
+        priceText: "R$ 21,90",
+        tags: ["100g", "Zero Açúcar", "Low Carb"],
+        zeroSugar: true,
+        lowCarb: true,
+        encomenda: false,
+        img: "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=400&q=80"
+      },
+      {
+        id: "pf39",
+        cat: "cookies",
+        name: "Cookies Low Carb Castanha 100g",
+        desc: "Biscoitos crocantes de castanha totalmente sem leite, sem glúten e sem açúcar. Pacote de 100g.",
+        price: 21.50,
+        priceText: "R$ 21,50",
+        tags: ["100g", "Zero Açúcar", "Low Carb"],
+        zeroSugar: true,
+        lowCarb: true,
+        encomenda: false,
+        img: "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=400&q=80"
+      },
+      {
+        id: "pf63",
+        cat: "cookies",
+        name: "Cookies de Chocolate 100g",
+        desc: "Rico em fibras: cacau 100%, farinha de aveia orgânica e amaranto em flocos orgânico. Sem refinados.",
+        price: 12.90,
+        priceText: "R$ 12,90",
+        tags: ["100g", "Amaranto & Aveia"],
+        zeroSugar: false,
+        lowCarb: false,
+        encomenda: false,
+        img: "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=400&q=80"
+      },
+      {
+        id: "pf64",
+        cat: "cookies",
+        name: "Broa de Milho 100g",
+        desc: "Deliciosa broa caseira de milho sem glúten, sem leite/lactose e sem açúcar refinado.",
+        price: 12.90,
+        priceText: "R$ 12,90",
+        tags: ["100g", "Sem Refinados"],
+        zeroSugar: false,
+        lowCarb: false,
+        encomenda: false,
+        img: "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=400&q=80"
+      },
+      {
+        id: "pf65",
+        cat: "cookies",
+        name: "Biscoito de Especiarias 100g",
+        desc: "Aquele biscoito caseiro perfumado com canela, noz-moscada e gengibre. 100% livre de glúten e leite.",
+        price: 12.90,
+        priceText: "R$ 12,90",
+        tags: ["100g", "Canela & Gengibre"],
+        zeroSugar: false,
+        lowCarb: false,
+        encomenda: false,
+        img: "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=400&q=80"
+      },
+
+      // ================= CONGELADOS & SALGADOS =================
+      {
+        id: "pf51",
+        cat: "congelados",
+        name: "Lasanha Bolonhesa com Queijo de Búfala 424g",
+        desc: "Já vem assada: é só aquecer! Livre de glúten e de lactose, reduzida em gorduras.",
+        price: 44.00,
+        priceText: "R$ 44,00",
+        tags: ["424g", "Pronta p/ Aquecer"],
+        zeroSugar: true,
+        lowCarb: false,
+        encomenda: false,
+        img: "https://images.unsplash.com/photo-1574894709920-11b28e7367e3?auto=format&fit=crop&w=400&q=80"
+      },
+      {
+        id: "pf76",
+        cat: "congelados",
+        name: "Lasanha de Frango com Queijo de Búfala",
+        desc: "Lasanha funcional de frango já assada, livre de glúten e de lactose, reduzida em gorduras.",
+        price: 44.00,
+        priceText: "R$ 44,00",
+        tags: ["Queijo de Búfala", "Sem Lactose"],
+        zeroSugar: true,
+        lowCarb: false,
+        encomenda: false,
+        img: "https://images.unsplash.com/photo-1574894709920-11b28e7367e3?auto=format&fit=crop&w=400&q=80"
+      },
+      {
+        id: "pf82",
+        cat: "congelados",
+        name: "Torta de Frango 600g",
+        desc: "Torta salgada saudável sem glúten, sem leite e sem conservantes. 600g (serve de 3 a 4 pessoas).",
+        price: 77.00,
+        priceText: "R$ 77,00",
+        tags: ["600g", "Serve 3-4 Pessoas"],
+        zeroSugar: true,
+        lowCarb: false,
+        encomenda: false,
+        img: "https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=400&q=80"
+      },
+      {
+        id: "pf55",
+        cat: "congelados",
+        name: "Pizza de Frango 18cm (Queijo de Búfala)",
+        desc: "Pizza individual 18cm com queijo de búfala zero lactose e massa sem glúten. Opção congelada.",
+        price: 40.50,
+        priceText: "R$ 40,50",
+        tags: ["18cm", "Queijo de Búfala"],
+        zeroSugar: true,
+        lowCarb: false,
+        encomenda: false,
+        img: "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=400&q=80"
+      },
+      {
+        id: "pf56",
+        cat: "congelados",
+        name: "Pizza Marguerita 18cm (Queijo de Búfala)",
+        desc: "Pizza artesanal 18cm com mussarela de búfala zero lactose, tomate e manjericão. Opção congelada.",
+        price: 39.99,
+        priceText: "R$ 39,99",
+        tags: ["18cm", "Queijo de Búfala"],
+        zeroSugar: true,
+        lowCarb: false,
+        encomenda: false,
+        img: "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=400&q=80"
+      },
+      {
+        id: "pf40",
+        cat: "congelados",
+        name: "Massa de Pizza Pré-Assada 30cm",
+        desc: "Disco de pizza grande (30cm) 100% sem glúten e sem lactose para você montar em casa.",
+        price: 18.90,
+        priceText: "R$ 18,90",
+        tags: ["30cm", "Sem Glúten"],
+        zeroSugar: true,
+        lowCarb: false,
+        encomenda: false,
+        img: "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=400&q=80"
+      },
+      {
+        id: "pf57",
+        cat: "congelados",
+        name: "Pão de Queijo de Búfala 500g",
+        desc: "Feito com mussarela de búfala zero lactose, macio por dentro e crocante por fora. Reduzido em gorduras.",
+        price: 38.90,
+        priceText: "R$ 38,90",
+        tags: ["500g", "Zero Lactose"],
+        zeroSugar: true,
+        lowCarb: false,
+        encomenda: false,
+        img: "https://images.unsplash.com/photo-1598373182133-52452f7691ef?auto=format&fit=crop&w=400&q=80"
+      },
+      {
+        id: "pf58",
+        cat: "congelados",
+        name: "Pão de Queijo de Búfala com Goiabada",
+        desc: "Livre de glúten e lactose, reduzido em gorduras, feito com queijo de búfala e recheio de goiabada.",
+        price: 38.90,
+        priceText: "R$ 38,90",
+        tags: ["500g", "Com Goiabada"],
+        zeroSugar: false,
+        lowCarb: false,
+        encomenda: false,
+        img: "https://images.unsplash.com/photo-1598373182133-52452f7691ef?auto=format&fit=crop&w=400&q=80"
+      },
+      {
+        id: "pf68",
+        cat: "congelados",
+        name: "Tortinha de Frango Low Carb 160g",
+        desc: "Lanche rápido e nutritivo com massa funcional low carb, sem glúten e sem lactose.",
+        price: 17.90,
+        priceText: "R$ 17,90",
+        tags: ["160g", "Low Carb"],
+        zeroSugar: true,
+        lowCarb: true,
+        encomenda: false,
+        img: "https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=400&q=80"
+      },
+      {
+        id: "pf36",
+        cat: "congelados",
+        name: "Tortinha de Legumes Low Carb",
+        desc: "Tortinha salgada vegetariana low carb, livre de glúten e de laticínios.",
+        price: 16.90,
+        priceText: "R$ 16,90",
+        tags: ["Vegetariana", "Low Carb"],
+        zeroSugar: true,
+        lowCarb: true,
+        encomenda: false,
+        img: "https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=400&q=80"
+      },
+      {
+        id: "pf54",
+        cat: "congelados",
+        name: "Empada de Frango com Palmito 225g",
+        desc: "Totalmente livre de glúten e leite. Já vem assada: basta aquecer e sua refeição está pronta!",
+        price: 17.99,
+        priceText: "R$ 17,99",
+        tags: ["225g", "Já Assada"],
+        zeroSugar: true,
+        lowCarb: false,
+        encomenda: false,
+        img: "https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=400&q=80"
+      },
+      {
+        id: "pf73",
+        cat: "congelados",
+        name: "Empada de Bacon com Brócolis (Massa Brisée)",
+        desc: "Empadinha com massa brisée super crocante, livre de glúten, zero lactose e zero leite.",
+        price: 17.99,
+        priceText: "R$ 17,99",
+        tags: ["Massa Brisée", "Zero Leite"],
+        zeroSugar: true,
+        lowCarb: true,
+        encomenda: false,
+        img: "https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=400&q=80"
+      },
+      {
+        id: "pf86",
+        cat: "congelados",
+        name: "Bolinho de Carne",
+        desc: "Bolinho de carne macio e saboroso, preparado com temperos selecionados sem glúten e sem lactose.",
+        price: 57.90,
+        priceText: "R$ 57,90",
+        tags: ["Proteico", "Lanche Prático"],
+        zeroSugar: true,
+        lowCarb: true,
+        encomenda: false,
+        img: "https://images.unsplash.com/photo-1529042410759-befb1204b468?auto=format&fit=crop&w=400&q=80"
+      },
+
+      // ================= ITENS DA LOJA & CESTAS =================
+      {
+        id: "pf23",
+        cat: "loja",
+        name: "Manteiga Ghee 200g",
+        desc: "Manteiga clarificada pura livre de lactose e caseína, ideal para uso culinário e pães.",
+        price: 39.00,
+        priceText: "R$ 39,00",
+        tags: ["200g", "Zero Lactose"],
+        zeroSugar: true,
+        lowCarb: true,
+        encomenda: false,
+        img: "https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?auto=format&fit=crop&w=400&q=80"
+      },
+      {
+        id: "pf67",
+        cat: "loja",
+        name: "Manteiga Ghee 500g",
+        desc: "Pote econômico 500g de Manteiga Ghee artesanal pura, sem glúten e sem lactose.",
+        price: 85.00,
+        priceText: "R$ 85,00",
+        tags: ["500g", "Zero Lactose"],
+        zeroSugar: true,
+        lowCarb: true,
+        encomenda: false,
+        img: "https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?auto=format&fit=crop&w=400&q=80"
+      },
+      {
+        id: "pf28",
+        cat: "loja",
+        name: "Queijo de Búfala Zero Lactose (Barra)",
+        desc: "Queijo de búfala em barra livre de glúten e de lactose. Consulte disponibilidade do dia.",
+        price: 54.00,
+        priceText: "R$ 54,00",
+        tags: ["Em Barra", "Zero Lactose"],
+        zeroSugar: true,
+        lowCarb: true,
+        encomenda: false,
+        img: "https://images.unsplash.com/photo-1452195100486-9cc805987862?auto=format&fit=crop&w=400&q=80"
+      },
+      {
+        id: "pf52",
+        cat: "loja",
+        name: "Geleias Artesanais Sem Açúcar",
+        desc: "Geleia de frutas 100% zero açúcar e sem conservantes, perfeita para acompanhar os pães da Panfit.",
+        price: 31.50,
+        priceText: "R$ 31,50",
+        tags: ["Zero Açúcar", "Natural"],
+        zeroSugar: true,
+        lowCarb: true,
+        encomenda: false,
+        img: "https://images.unsplash.com/photo-1597318181409-cf64d0b5d8a2?auto=format&fit=crop&w=400&q=80"
+      },
+      {
+        id: "pf53",
+        cat: "loja",
+        name: "Barra de Chocolate Sem Leite",
+        desc: "Chocolate nobre livre de glúten, leite e lactose.",
+        price: 36.00,
+        priceText: "R$ 36,00",
+        tags: ["Zero Leite", "Cacau Nobre"],
+        zeroSugar: false,
+        lowCarb: false,
+        encomenda: false,
+        img: "https://images.unsplash.com/photo-1549007994-cb92caebd54b?auto=format&fit=crop&w=400&q=80"
+      },
+      {
+        id: "pf69",
+        cat: "loja",
+        name: "Chips de Aipim / Batata Doce",
+        desc: "Snack crocante e natural de aipim ou batata doce, sem glúten e sem lactose.",
+        price: 9.90,
+        priceText: "R$ 9,90",
+        tags: ["Snack Crocante", "Natural"],
+        zeroSugar: true,
+        lowCarb: false,
+        encomenda: false,
+        img: "https://images.unsplash.com/photo-1566478989037-eec170784d0b?auto=format&fit=crop&w=400&q=80"
+      },
+      {
+        id: "pf20",
+        cat: "loja",
+        name: "Cesta Display Presente",
+        desc: "1 bolo cenoura trufado + 1 pão batata + 1 chocolate 63% c/ laranja + 2 cupcakes chocolate + 1 geleia de frutas.",
+        price: 189.40,
+        priceText: "R$ 189,40",
+        tags: ["Cesta Presente", "6 Itens"],
+        zeroSugar: false,
+        lowCarb: false,
+        encomenda: true,
+        img: "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=400&q=80"
+      },
+      {
+        id: "pf22",
+        cat: "loja",
+        name: "Cesta Zero Açúcar Completa",
+        desc: "1 bolo cenoura castanha low carb + 1 pão abóbora + 1 choc 70% zero + 1 geleia zero + 2 cupcakes zero + 1 cookies low carb.",
+        price: 223.70,
+        priceText: "R$ 223,70",
+        tags: ["100% Zero Açúcar", "7 Itens"],
+        zeroSugar: true,
+        lowCarb: true,
+        encomenda: true,
+        img: "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=400&q=80"
+      },
+      {
+        id: "pf21",
+        cat: "loja",
+        name: "Cesta Mix Fit",
+        desc: "1 bolo choc + 1 bolo cenoura redondo + 1 pão trad. + 1 broa milho + 1 biscoito especiarias + 1 cupcake + 1 geleia + 1 choc 63%.",
+        price: 244.30,
+        priceText: "R$ 244,30",
+        tags: ["Super Cesta", "8 Itens"],
+        zeroSugar: false,
+        lowCarb: false,
+        encomenda: true,
+        img: "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=400&q=80"
+      },
+      {
+        id: "pf77",
+        cat: "loja",
+        name: "Cesta Especial Romântica / Namorados",
+        desc: "1 bolo coração + 1 bandeja morangos + 1 bolo de copo + 8 brigadeiros gourmet + 2 barras chocolate + 2 refrigerantes naturais zero.",
+        price: 319.00,
+        priceText: "R$ 319,00",
+        tags: ["Presente Especial", "Completa"],
+        zeroSugar: false,
+        lowCarb: false,
+        encomenda: true,
+        img: "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=400&q=80"
+      }
+    ];
+
+    // Carrega fotos customizadas salvas no navegador (se houver)
+    const savedPhotos = JSON.parse(localStorage.getItem('panfit_custom_photos') || '{}');
+    const PRODUCTS = DEFAULT_PRODUCTS.map(p => ({
+      ...p,
+      img: savedPhotos[p.id] || p.img
+    }));
+
+    let activeCategory = 'todos';
+    let activeDiet = 'todos';
+    let searchQuery = '';
+    let cart = {};
+
+    // Status de funcionamento em tempo real (Jaraguá do Sul)
+    function updateBakeryStatus() {
+      const now = new Date();
+      const day = now.getDay(); // 0 Dom, 1-5 Seg-Sex, 6 Sab
+      const minutes = now.getHours() * 60 + now.getMinutes();
+      const dot = document.getElementById('statusDot');
+      const label = document.getElementById('statusLabel');
+
+      let isOpen = false;
+      if (day >= 1 && day <= 5 && minutes >= 510 && minutes < 1110) isOpen = true; // 08:30 - 18:30
+      if (day === 6 && minutes >= 510 && minutes < 780) isOpen = true; // 08:30 - 13:00
+
+      if (isOpen) {
+        dot.classList.remove('closed');
+        label.textContent = 'Padaria Aberta Agora • Fornada do Dia';
+      } else {
+        dot.classList.add('closed');
+        label.textContent = 'Fechada Agora • Deixe sua Encomenda Agendada';
+      }
+    }
+
+    function renderCategoryTabs() {
+      const nav = document.getElementById('categoryTabs');
+      nav.innerHTML = CATEGORIES.map(cat => {
+        const count = cat.id === 'todos'
+          ? PRODUCTS.length
+          : PRODUCTS.filter(p => p.cat === cat.id).length;
+        return `
+          <button class="cat-tab ${activeCategory === cat.id ? 'active' : ''}" onclick="selectCategory('${cat.id}')">
+            <span>${cat.name}</span>
+            <span class="cat-count">${count}</span>
+          </button>
+        `;
+      }).join('');
+    }
+
+    function selectCategory(catId) {
+      activeCategory = catId;
+      renderCategoryTabs();
+      renderMenu();
+    }
+
+    function setDietFilter(diet, btn) {
+      activeDiet = diet;
+      document.querySelectorAll('.diet-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderMenu();
+    }
+
+    function handleSearch(val) {
+      searchQuery = val.trim().toLowerCase();
+      const input = document.getElementById('searchInput');
+      if (input.value !== val) input.value = val;
+      document.getElementById('searchClear').style.display = searchQuery ? 'block' : 'none';
+      renderMenu();
+    }
+
+    function filterProducts() {
+      return PRODUCTS.filter(p => {
+        if (activeCategory !== 'todos' && p.cat !== activeCategory) return false;
+        if (activeDiet === 'zero-acucar' && !p.zeroSugar) return false;
+        if (activeDiet === 'low-carb' && !p.lowCarb) return false;
+        if (activeDiet === 'pronta-entrega' && p.cat !== 'congelados') return false;
+        if (searchQuery) {
+          const hay = (p.name + ' ' + p.desc + ' ' + p.tags.join(' ')).toLowerCase();
+          if (!hay.includes(searchQuery)) return false;
+        }
+        return true;
+      });
+    }
+
+    function renderMenu() {
+      const container = document.getElementById('menuContainer');
+      const filtered = filterProducts();
+      document.getElementById('itemsCounter').textContent = `${filtered.length} ${filtered.length === 1 ? 'produto' : 'produtos'}`;
+
+      if (!filtered.length) {
+        container.innerHTML = `
+          <div style="text-align:center; padding:36px 16px; color:var(--ink-soft);">
+            <p style="font-family:var(--font-serif); font-size:17px;">Nenhum item encontrado para esse filtro.</p>
+            <button class="diet-btn" style="margin-top:10px;" onclick="handleSearch(''); selectCategory('todos');">Ver todos os 52 produtos</button>
+          </div>
+        `;
+        return;
+      }
+
+      // Agrupa por categoria quando "todos" está selecionado
+      const groups = activeCategory === 'todos'
+        ? CATEGORIES.filter(c => c.id !== 'todos')
+        : CATEGORIES.filter(c => c.id === activeCategory);
+
+      let html = '';
+      groups.forEach(group => {
+        const items = filtered.filter(p => p.cat === group.id);
+        if (!items.length) return;
+
+        html += `
+          <div class="category-group-header">
+            <h3 class="category-group-title">${group.name}</h3>
+            <span class="category-group-sub">${items.length} opções</span>
+          </div>
+        `;
+
+        items.forEach(item => {
+          const qty = cart[item.id] || 0;
+          html += `
+            <article class="menu-item">
+              <div class="menu-thumb-wrap">
+                <img src="${item.img}" alt="${item.name}" class="menu-thumb" loading="lazy" />
+                ${item.encomenda ? '<span class="encomenda-flag">Encomenda</span>' : ''}
+              </div>
+              <div class="menu-content">
+                <div class="menu-title-line">
+                  <h4 class="menu-name">${item.name}</h4>
+                  <span class="menu-price">${item.priceText}</span>
+                </div>
+                <p class="menu-desc">${item.desc}</p>
+                <div class="menu-bottom">
+                  <div class="menu-badges">
+                    ${item.zeroSugar ? '<span class="tag-pill zero-sugar">Zero Açúcar</span>' : ''}
+                    ${item.lowCarb ? '<span class="tag-pill low-carb">Low Carb</span>' : ''}
+                    ${item.tags.map(t => `<span class="tag-pill">${t}</span>`).join('')}
+                  </div>
+                  <div class="qty-control">
+                    ${qty === 0 ? `
+                      <button class="add-btn" onclick="changeQty('${item.id}', 1)">+ Adicionar</button>
+                    ` : `
+                      <div class="qty-stepper">
+                        <button onclick="changeQty('${item.id}', -1)">−</button>
+                        <span>${qty}</span>
+                        <button onclick="changeQty('${item.id}', 1)">+</button>
+                      </div>
+                    `}
+                  </div>
+                </div>
+              </div>
+            </article>
+          `;
+        });
+      });
+
+      container.innerHTML = html;
+    }
+
+    function changeQty(id, delta) {
+      cart[id] = (cart[id] || 0) + delta;
+      if (cart[id] <= 0) delete cart[id];
+      renderMenu();
+      updateDock();
+    }
+
+    function formatBRL(v) {
+      return v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    }
+
+    function updateDock() {
+      const dock = document.getElementById('comandaDock');
+      let totalItems = 0;
+      let totalValue = 0;
+
+      Object.keys(cart).forEach(id => {
+        const prod = PRODUCTS.find(p => p.id === id);
+        if (prod) {
+          totalItems += cart[id];
+          totalValue += prod.price * cart[id];
+        }
+      });
+
+      if (totalItems > 0) {
+        document.getElementById('dockCount').textContent = `${totalItems} ${totalItems === 1 ? 'item selecionado' : 'itens selecionados'}`;
+        document.getElementById('dockTotal').textContent = `Total estimado: ${formatBRL(totalValue)}`;
+        dock.classList.add('visible');
+      } else {
+        dock.classList.remove('visible');
+        closeComandaModal();
+      }
+    }
+
+    function openComandaModal() {
+      const box = document.getElementById('receiptItems');
+      let total = 0;
+      let rows = '';
+
+      Object.keys(cart).forEach(id => {
+        const prod = PRODUCTS.find(p => p.id === id);
+        if (!prod) return;
+        const sub = prod.price * cart[id];
+        total += sub;
+        rows += `
+          <div class="receipt-row">
+            <div>
+              <strong>${cart[id]}x ${prod.name}</strong>
+              <div style="font-size:11px; color:var(--ink-muted);">${prod.priceText} cada</div>
+            </div>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <strong>${formatBRL(sub)}</strong>
+              <button class="close-btn" style="width:24px;height:24px;font-size:12px;" onclick="changeQty('${prod.id}', -1); openComandaModal();">−</button>
+            </div>
+          </div>
+        `;
+      });
+
+      rows += `
+        <div style="display:flex; justify-content:space-between; padding-top:12px; font-family:var(--font-serif); font-size:16px; font-weight:700;">
+          <span>Total Estimado</span>
+          <span style="color:var(--olive);">${formatBRL(total)}</span>
+        </div>
+      `;
+
+      box.innerHTML = rows;
+      document.getElementById('comandaModal').classList.add('open');
+    }
+
+    function closeComandaModal() {
+      document.getElementById('comandaModal').classList.remove('open');
+    }
+
+    function sendOrderToWhatsApp() {
+      const name = document.getElementById('clientName').value.trim();
+      const mode = document.getElementById('deliveryMode').value;
+      const notes = document.getElementById('clientNotes').value.trim();
+
+      let total = 0;
+      let lines = [];
+      lines.push(`Olá, *Panfit*! Tudo bem?`);
+      if (name) lines.push(`Me chamo *${name}* e montei meu pedido pelo catálogo interativo:`);
+      else lines.push(`Montei meu pedido pelo catálogo interativo:`);
+      lines.push('');
+
+      Object.keys(cart).forEach(id => {
+        const prod = PRODUCTS.find(p => p.id === id);
+        if (prod) {
+          const sub = prod.price * cart[id];
+          total += sub;
+          lines.push(`• *${cart[id]}x ${prod.name}* (${formatBRL(sub)})`);
+        }
+      });
+
+      lines.push('');
+      lines.push(`*Total estimado:* ${formatBRL(total)}`);
+      lines.push(`*Modalidade:* ${mode}`);
+      if (notes) lines.push(`*Observações:* ${notes}`);
+      lines.push('');
+      lines.push(`Podem confirmar a disponibilidade para mim? Obrigado!`);
+
+      const url = `https://wa.me/5547997037045?text=${encodeURIComponent(lines.join('\n'))}`;
+      window.open(url, '_blank');
+    }
+
+    // Sincronizador de Fotos Reais (Upload Local -> Base64 comprimido)
+    function openPhotoModal() {
+      const list = document.getElementById('photoEditorList');
+      list.innerHTML = PRODUCTS.map(p => `
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:10px; padding:8px; border:1px solid var(--line); background:var(--paper-card); border-radius:4px;">
+          <div style="display:flex; align-items:center; gap:10px; min-width:0;">
+            <img src="${p.img}" id="preview_${p.id}" style="width:44px; height:44px; object-fit:cover; border-radius:4px; border:1px solid var(--line-dark);" />
+            <div style="min-width:0;">
+              <div style="font-size:12.5px; font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${p.name}</div>
+              <div style="font-size:11px; color:var(--olive);">${p.priceText}</div>
+            </div>
+          </div>
+          <label style="padding:6px 10px; font-size:11px; font-weight:700; background:var(--paper); border:1px solid var(--line-dark); border-radius:4px; cursor:pointer; white-space:nowrap;">
+            📁 Trocar Foto
+            <input type="file" accept="image/*" style="display:none;" onchange="handlePhotoUpload('${p.id}', this)" />
+          </label>
+        </div>
+      `).join('');
+      document.getElementById('photoModal').classList.add('open');
+    }
+
+    function closePhotoModal() {
+      document.getElementById('photoModal').classList.remove('open');
+    }
+
+    function handlePhotoUpload(prodId, input) {
+      const file = input.files && input.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const img = new Image();
+        img.onload = function() {
+          const canvas = document.createElement('canvas');
+          canvas.width = 300;
+          canvas.height = 300;
+          const ctx = canvas.getContext('2d');
+          const minSide = Math.min(img.width, img.height);
+          const sx = (img.width - minSide) / 2;
+          const sy = (img.height - minSide) / 2;
+          ctx.drawImage(img, sx, sy, minSide, minSide, 0, 0, 300, 300);
+          const dataUrl = canvas.toDataURL('image/jpeg', 0.82);
+
+          const target = PRODUCTS.find(x => x.id === prodId);
+          if (target) target.img = dataUrl;
+          savedPhotos[prodId] = dataUrl;
+          localStorage.setItem('panfit_custom_photos', JSON.stringify(savedPhotos));
+          document.getElementById('preview_' + prodId).src = dataUrl;
+          renderMenu();
+        };
+        img.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function exportUpdatedCatalog() {
+      navigator.clipboard.writeText(JSON.stringify(PRODUCTS, null, 2));
+      alert('Catálogo JSON atualizado copiado para o seu Ctrl+V!');
+    }
+
+    function resetCustomPhotos() {
+      localStorage.removeItem('panfit_custom_photos');
+      location.reload();
+    }
+
+    updateBakeryStatus();
+    renderCategoryTabs();
+    renderMenu();
+  </script>
+</body>
+</html>
